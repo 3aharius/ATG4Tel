@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+   
+<item-descriptor name="user" display-name="user" cache-mode="simple">
+   
+    <table name="APP_USER" type="primary" id-column-name="APP_USER_ID" >
+        <property name="id" column-name="APP_USER_ID"/>
+        <property name="firstName" column-name="FIRST_NAME" display-name="firstName" data-type="string"/>
+        <property name="lastName" column-name="LAST_NAME" display-name="lastName" data-type="string"/>
+        <property name="email" column-name="EMAIL" display-name="email" data-type="string"/>
+        <property name="suscriptionDate" column-name="SUBSCRIPTION_DATE" display-name="suscriptionDate" data-type="date"/>
+    </table>
+    <table name="USER_GENRE" type="multi" id-column-names="APP_USER_FK">
+        <property name="genres" column-names="GENRE_FK" data-type="set"
+                  component-item-type="genre" cascade="delete"/>
+    </table>
+</item-descriptor>
+
+<item-descriptor name="genre" display-name="genre" >
+    <table name="GENRE" type="primary" id-column-name="GENRE_ID">
+        <property name="id" column-name="GENRE_ID"/>
+        <property name="title" column-name="TITLE" display-name="title" data-type="string"/>
+        <property name="description" column-name="DESCRIPTION" display-name="description" data-type="big string"/>
+    </table>
+    <table name="USER_GENRE" type="multi" id-column-names="GENRE_FK">
+        <property name="users" column-names="APP_USER_FK" data-type="set"
+                  component-item-type="user"/>
+    </table>
+</item-descriptor>
+</gsa-template>

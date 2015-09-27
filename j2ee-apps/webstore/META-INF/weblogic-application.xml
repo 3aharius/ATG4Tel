@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weblogic-application>
+<session-descriptor>
+	
+	  <timeout-secs>1800</timeout-secs>
+		  
+</session-descriptor>
+</weblogic-application>
