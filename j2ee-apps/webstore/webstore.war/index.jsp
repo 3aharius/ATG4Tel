@@ -1,7 +1,7 @@
 <%@ taglib uri="http://www.atg.com/taglibs/daf/dspjspTaglib1_1"
 	prefix="dsp"%>
+<%@page  import="my.test.form.model.Genre"%>
 <dsp:importbean bean="/my/handlers/GenresFormHandler" />
-<dsp:importbean bean="/my/model/Genre" />
 <dsp:importbean bean="/atg/dynamo/droplet/ForEach" />
 <dsp:importbean bean="/atg/targeting/RepositoryLookup" />
 <dsp:page>
